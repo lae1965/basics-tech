@@ -27,7 +27,7 @@ app.use(apiErrorMiddleware);
 (async () => {
   try {
     mongoose.set('strictQuery', false);
-    await mongoose.connect('mongodb://0.0.0.0:27017/basics-tech');
+    await mongoose.connect(process.env.BASE_URL);
     app.listen(PORT, () => {
       console.log(`Server has been started on ${PORT} port...`);
     });
